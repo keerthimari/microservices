@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c44b6fa3b8.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .side-div {
+            float: left;
+            width: 160px;
+            height: 767px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /* background-color: rgb(226, 176, 176); */
+        }
+
+        .side-heading {
+            font-size: 20px;
+            height: 45px;
+            padding-left: 15px;
+            padding-top: 10px;
+            background-color: rgb(117, 113, 249);
+            color: white;
+        }
+        .content-div{
+            float: left;
+            height: 767px;
+            background-color: aqua;
+        }
+        header {
+            /* background-color: rgb(186, 226, 176); */
+            height: 40px;
+            margin-left: 20px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .fa-bars {
+            margin: 10px;
+            font-size: 18px;
+
+        }
+
+        .search {
+            margin-left: 15px;
+            font-size: 11px;
+            padding: 3px;
+            width: 150px;
+        }
+
+        .fa-bell {
+            margin-left: auto;
+            margin-right: 4px;
+            top: 5px;
+            /* Adding some spacing */
+        }
+
+        .dropdown {
+            margin-right: 5px;
+        }
+
+        .fa-user {
+            margin-right: 3px;
+            padding: 4px;
+            width: 20px;
+            /* Adding some spacing */
+        }
+
+        .offcanvas-title img {
+            border-radius: 100px;
+            margin-left: 100px;
+        }
+
+        button {
+            border-radius: 180px;
+        }
+
+        .dropdown-toggle {
+            color: black;
+        }
+
+        .card1 {
+            background: rgb(128, 82, 245);
+            background: linear-gradient(90deg, rgba(128, 82, 245, 1) 0%, rgba(119, 135, 251, 1) 100%);
+            border-radius: 10px;
+            color: white;
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+
+        .card2 {
+            background: rgb(241, 159, 157);
+            background: linear-gradient(90deg, rgba(241, 159, 157, 1) 0%, rgba(252, 96, 137, 1) 100%);
+            border-radius: 10px;
+            color: white;
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+
+        .card3 {
+            background: rgb(255, 133, 65);
+            background: linear-gradient(90deg, rgba(255, 133, 65, 1) 0%, rgba(254, 185, 118, 1) 100%);
+            border-radius: 10px;
+            color: white;
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+
+        .card4 {
+            background: rgb(86, 126, 251);
+            background: linear-gradient(90deg, rgba(86, 126, 251, 1) 0%, rgba(28, 85, 254, 1) 100%);
+            border-radius: 10px;
+            color: white;
+            padding-left: 25px;
+            padding-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!----------------Side Div  -------------->
+
+    <div id="main-div">
+        <div class="side-div">
+            <h2 class="side-heading">Microserivces</h2>
+            <div>
+                <h6 class="ps-3 pt-4"><i class="fa-solid fa-gauge-high"></i> Dashboard</h6>
+            </div>
+
+            <div class="dropdown1">
+
+                <button type="button" class="btn dropdown-toggle ps-3" data-bs-toggle="dropdown">
+                    <i class="fa-regular fa-lightbulb"></i> Layouts
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Another link</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown2">
+
+                <button type="button" class="btn dropdown-toggle ps-3" data-bs-toggle="dropdown">
+                    <i class="fa-regular fa-envelope "></i> Email
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Another link</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown3">
+
+                <button type="button" class="btn dropdown-toggle ps-3" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-mobile"></i> Apps
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Another link</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <!---------------- Headersection  -------------->
+
+        <div id="content-div">
+            <header class="">
+                <!-- <i class="fa-solid fa-bars ms-4"></i>
+                <input type="search" class="ps-2 search" placeholder="Search Dashboard" aria-label="Search Dashboard"> -->
+
+                <i class="fa-regular fa-bell"></i>
+
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                        Setting
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Another link</a></li>
+                    </ul>
+                </div>
+
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"><span>
+                        <i class="fa-regular fa-user"></i></span></button>
+
+            </header>
+
+            <!----------------- Profile Offcanvase  ------------------------>
+
+
+            <div class="offcanvas offcanvas-end" id="demo">
+                <div class="offcanvas-header">
+                    <h1 class="offcanvas-title"><img src="user-thumbnail.png" width="100px" height="100px"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Some text lorem ipsum.</p>
+                    <p>Some text lorem ipsum.</p>
+                    <p>Some text lorem ipsum.</p>
+                    <button class="btn btn-secondary" type="button">A Button</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!---------------- Main Body Content  -------------->
+
+
+            <div class="container-fluid card-section mt-3">
+                <div class="row">
+                    <div class="col card1 mx-2">
+                        <div class="card-body">
+                            <h6>Product Solid</h6>
+                            <p>45678</p>
+                            <p>jan-march 2019</p>
+                        </div>
+                    </div>
+                    <div class="col card2 mx-2">
+                        <div class="card-body">
+                            <h6>Product Solid</h6>
+                            <p>45678</p>
+                            <p>jan-march 2019</p>
+                        </div>
+                    </div>
+                    <div class="col card3 mx-2">
+                        <div class="card-body">
+                            <h6>Product Solid</h6>
+                            <p>45678</p>
+                            <p>jan-march 2019</p>
+                        </div>
+                    </div>
+                    <div class="col card4 mx-2">
+                        <div class="card-body">
+                            <h6>Product Solid</h6>
+                            <p>45678</p>
+                            <p>jan-march 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
