@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-div {
+    height: 100vh;
+}
+
+.side-div {
+    height: 100%;
+    width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+}
+.side-div .dropdown-toggle{
+    margin-left: 0px;
+}
+.side-heading {
+    font-size: 20px;
+    height: 45px;
+    padding-left: 15px;
+    padding-top: 10px;
+    background-color: rgb(117, 113, 249);
+    color: white;
+}
+
+.content-div {
+    height: 100%;
+    width: calc(100% - 160px);
+    /* margin-left: 15px; */
+    float: left;
+    /* background-color: aqua; */
+}
+
+header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    /* background-color: blanchedalmond; */
+}
+
+.fa-bell {
+    margin-left: auto;
+    margin-right: 4px;
+    top: 5px;
+}
+
+.dropdown {
+    margin-right: 5px;
+}
+
+.fa-user {
+    margin-right: 3px;
+    padding: 4px;
+    width: 20px;
+}
+
+button {
+    border-radius: 180px;
+}
+
+.offcanvas-title img {
+    border-radius: 100px;
+    margin-left: 150px;
+    margin-top: 30px;
+}
+.offcanvas-header .btn-close{
+    margin-bottom: 60px;
+}
+.offcanvas-body div{
+    text-align: center;  
+}
+.card1 {
+    background: rgb(128, 82, 245);
+    background: linear-gradient(90deg, rgba(128, 82, 245, 1) 0%, rgba(119, 135, 251, 1) 100%);
+    border-radius: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.card2 {
+    background: rgb(241, 159, 157);
+    background: linear-gradient(90deg, rgba(241, 159, 157, 1) 0%, rgba(252, 96, 137, 1) 100%);
+    border-radius: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.card3 {
+    background: rgb(255, 133, 65);
+    background: linear-gradient(90deg, rgba(255, 133, 65, 1) 0%, rgba(254, 185, 118, 1) 100%);
+    border-radius: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.card4 {
+    background: rgb(86, 126, 251);
+    background: linear-gradient(90deg, rgba(86, 126, 251, 1) 0%, rgba(28, 85, 254, 1) 100%);
+    border-radius: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .side-div {
+        width: 100%;
+        height: auto;
+    }
+
+    .content-div {
+        width: 100%;
+        margin-left: 0;
+    }
+}
