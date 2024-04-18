@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEN</title>
+    <title>Microservices</title>
+    <link rel="stylesheet" href="micro.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,425 +15,144 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c44b6fa3b8.js" crossorigin="anonymous"></script>
-
-    <style>
-        #body-div {
-            position: relative;
-            /* width: calc(100% - 70px); Remove fixed width */
-            transition: margin-left 0.5s;
-            /* Add transition for smooth movement */
-        }
-
-        .body-expanded {
-            margin-left: 200px;
-
-        }
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /*.side-div {
-             float: left;
-            width: 160px;
-            height: 767px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            background-color: rgb(226, 176, 176); 
-        }*/
-
-        .side-heading {
-            font-size: 20px;
-            /* background-color: rgb(117, 113, 249); */
-            color: black;
-            padding-top: 4px;
-            padding-left: 15px;
-        }
-
-        header {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            height: 20%;
-            margin-top: 0px;
-            display: flex;
-            align-items: center;
-        }
-
-        header img {
-            border-radius: 20px;
-        }
-
-        .fa-bell {
-            margin-left: auto;
-            margin-right: 4px;
-            top: 5px;
-            /* Adding some spacing */
-        }
-
-
-
-        .fa-user {
-            margin-right: 3px;
-            padding: 4px;
-            width: 20px;
-            /* Adding some spacing */
-        }
-
-        .offcanvas-title img {
-            border-radius: 100px;
-            margin-left: 170px;
-
-        }
-
-        .offcanvas-body div {
-            text-align: center;
-        }
-
-        .offcanvas-body .login {
-            padding: 5px 40px;
-            /* background-color: red; */
-            color: white;
-            margin-left: 120px;
-            margin-top: 10px;
-
-        }
-
-        .offcanvas-header .btn-close {
-            margin-bottom: 60px;
-        }
-
-        .offcanvas-body .login {
-            margin-left: 120px;
-        }
-
-        button {
-            border-radius: 180px;
-        }
-
-        .dropdown-toggle {
-            color: black;
-        }
-
-        #main-div {
-            height: 100%;
-        }
-
-        #side-div {
-            width: 70px;
-            /* height: 100%; */
-            position: fixed;
-            /* z-index: 1; */
-            height: 100%;
-            background-color: rgb(39, 41, 61);
-            float: left;
-        }
-
-        .content {
-            font-size: 13px;
-        }
-
-        #button {
-            /* margin-top: 350px; */
-            margin-left: 20px;
-        }
-
-        .sidepanel {
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            height: 100%;
-            top: 50px;
-            left: 70px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            /* background-color: rgb(216, 208, 208); */
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidepanel a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidepanel a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidepanel .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-        }
-
-        .openbtn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #111;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-        }
-
-        .openbtn:hover {
-            background-color: #444;
-        }
-
-
-        #body-div {
-            position: relative;
-            /* width: calc(100% - 70px); */
-            overflow: hidden;
-
-        }
-
-        .card1 {
-            background: rgb(128, 82, 245);
-            background: linear-gradient(90deg, rgba(128, 82, 245, 1) 0%, rgba(119, 135, 251, 1) 100%);
-            border-radius: 10px;
-            color: white;
-            padding-left: 25px;
-            padding-top: 15px;
-        }
-
-        .card2 {
-            background: rgb(241, 159, 157);
-            background: linear-gradient(90deg, rgba(241, 159, 157, 1) 0%, rgba(252, 96, 137, 1) 100%);
-            border-radius: 10px;
-            color: white;
-            padding-left: 25px;
-            padding-top: 15px;
-        }
-
-        .card3 {
-            background: rgb(255, 133, 65);
-            background: linear-gradient(90deg, rgba(255, 133, 65, 1) 0%, rgba(254, 185, 118, 1) 100%);
-            border-radius: 10px;
-            color: white;
-            padding-left: 25px;
-            padding-top: 15px;
-        }
-
-        .card4 {
-            background: rgb(86, 126, 251);
-            background: linear-gradient(90deg, rgba(86, 126, 251, 1) 0%, rgba(28, 85, 254, 1) 100%);
-            border-radius: 10px;
-            color: white;
-            padding-left: 25px;
-            padding-top: 15px;
-        }
-
-        #footer {
-            height: 40px;
-            width: 100%;
-            background-color: gray;
-            margin-top: 500px;
-        }
-    </style>
-
 </head>
 
 <body>
+    <div class="container-div">
 
-
-    <!---------------- Headersection  -------------->
-
-    <div id="content-div">
-        <header>
-            <h2 class="side-heading">Microserivces</h2>
-
-            <i class="fa-regular fa-bell p-2" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Notification"></i>
-            <i class="fa-solid fa-gear p-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Setting"></i></i>
-            <i class="fa-solid fa-question p-3" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Help!"></i></i>
-
-            <a data-bs-toggle="offcanvas" data-bs-target="#demo"><img src="img/keerthi.jpg" width="40px"
-                    height="40px"></a>
-
-            <!-- <button type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"><span>
-                    <i class="fa-regular fa-user"></i></span></button> -->
-
+        <header class="d-flex justify-content-between align-items-center px-3 py-1">
+            <h5 class="side-heading m-0 text-white"><span class="me-2 p-1">M</span>Microservices</h5>
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-question me-3 text-white" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Help!"></i>
+                <i class="fa-regular fa-bell me-3 text-white" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Notification"></i>
+                <span id="notification-badge"
+                    class="position-absolute top-10 start-1 translate-middle badge rounded-pill bg-danger">3
+                    <!-- Initial notification count -->
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+                <i class="fa-solid fa-gear me-3 text-white" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Setting"></i>
+                
+                <a data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    <img src="img/keerthi.jpg" width="40px" height="40px" class="rounded-circle">
+                </a>
+            </div>
         </header>
 
-        <!----------------- Profile Offcanvase  ------------------------>
-
+        <!------------- Offcanvas --------------->
 
         <div class="offcanvas offcanvas-end" id="demo">
-            <div class="offcanvas-header">
-                <h1 class="offcanvas-title"><img src="img/keerthi.jpg" width="50px" height="50px"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            <div class="offcanvas-header d-flex justify-content-center align-items-center">
+
+                <h1 class="offcanvas-title"><img src="img/keerthi.jpg" width="70px" height="70px"
+                        class="rounded-circle mt-5"></h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                    style="position: absolute; top: 15px; right: 30px;"></button>
+
             </div>
             <div class="offcanvas-body">
-                <div class="name1"><b>Keerthika M</b></div>
-                <div>keerthika@senturaa.com</div>
-                <div>User ID : 1234566789</div>
-                <button class="btn bg-danger login" type="button">Login</button>
+                <div class="d-flex flex-column align-items-center">
+                    <div class="name1"><b>Keerthika M</b></div>
+                    <div class="mb-2">keerthika@senturaa.com</div>
+                    <div class="mb-2">User ID: 1234566789</div>
+                    <button class="btn btn-danger login" type="button">Logout</button>
+                </div>
             </div>
         </div>
 
-
-
-
-
-
-
-        <!---------------- Main Body Content  -------------->
-
-        <div id="main-div">
-            <div id="side-div">
-                <div class="content">
-                    <ul class="navbar-nav">
-                        <a href="#" id="dashboard" onclick="openNav('dashboardContent')" class="nav-link text-white">
-                            <li class="nav-item text-center"><i class="fa-solid fa-gauge-high "></i>Dashboard</li>
-                        </a>
-                        <a href="#" id="audit" onclick="openNav('auditContent')" class="nav-link text-white">
-                            <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>Audit Log</li>
-                        </a>
-                        <a href="#" id="micro" onclick="openNav('microContent')" class="nav-link text-white">
-                            <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>My Microservices
-                            </li>
-                        </a>
-                        <a href="#" id="all" onclick="openNav('allContent')" class="nav-link text-white">
-                            <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>All
-                                Microservices
-                            </li>
-                        </a>
-                        <a href="#" id="connect" onclick="openNav('connectContent')" class="nav-link text-white">
-                            <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>Connections</li>
-                        </a>
-
-                    </ul>
-                </div>
+        <main>
+            <aside>
+                <ul class="navbar-nav">
+                    <!-- <a href="#" onclick="openNav('dashboardContent')" class="nav-link text-white">
+                        <li class="nav-item text-center"><i class="fa-solid fa-gauge-high "></i><br>Dashboard</li>
+                    </a> -->
+                    <a href="#" onclick="openNav('auditContent')" class="nav-link text-white">
+                        <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>Audit Log</li>
+                    </a>
+                    <a href="#" onclick="openNav('microContent')" class="nav-link text-white">
+                        <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>My Extension
+                        </li>
+                    </a>
+                    <a href="#" class="nav-link text-white">
+                        <li class="nav-item text-center"><i class="fa-regular fa-lightbulb"></i><br>All Extension
+                        </li>
+                    </a>
+                    
+                </ul>
 
 
                 <div id="button">
-                    <button onclick="toggleNav()"><i class="fa-solid fa-arrows-left-right border-none"></i></button>
+                    <button onclick="toggleNav()"><i class="fa-solid fa-angles-left"></i></button>
                 </div>
-                <!-- <div class="expand"><i class="fa-solid fa-arrows-left-right text-white"></i></div> -->
 
 
                 <div id="mySidepanel" class="sidepanel">
-                    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> -->
-                    <div id="dashboardContent" class="content-section">
-                        <p class="ms-3">Dashboard Content</p>
 
-                    </div>
-                    <div id="auditContent" class="content-section" style="display: none;">
-                        <p>Audit Log Content</p>
+                    <div id="auditContent" class="content-section" >
+                        <p class="ps-3">Audit Log Content</p>
                     </div>
                     <div id="microContent" class="content-section" style="display: none;">
-                        <p>My Microservices Content</p>
-                        <p>Lorem, ipsum dolor.</p>
+                        <p class="ps-3">My Microservices Content</p>
+                        <p class="ps-3">Lorem, ipsum dolor.</p>
                     </div>
                     <div id="allContent" class="content-section" style="display: none;">
                         <p>All Microservices Content</p>
                     </div>
-                    <div id="connectContent" class="content-section" style="display: none;">
-                        <p>Connections Content</p>
+                   
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <article id="body-div">
+
+                <div class="container-fluid card-section">
+                    <div class="row mt-3">
+                        <div class="col card1">
+                            <div class="card-body">
+                                <h6>Product Solid</h6>
+                                <p>45678</p>
+                                <p>jan-march 2019</p>
+                            </div>
+                        </div>
+                        <div class="col card2 ms-3">
+                            <div class="card-body">
+                                <h6>Product Solid</h6>
+                                <p>45678</p>
+                                <p>jan-march 2019</p>
+                            </div>
+                        </div>
+                        <div class="col card3 ms-3">
+                            <div class="card-body">
+                                <h6>Product Solid</h6>
+                                <p>45678</p>
+                                <p>jan-march 2019</p>
+                            </div>
+                        </div>
+                        <div class="col card4 ms-3">
+                            <div class="card-body">
+                                <h6>Product Solid</h6>
+                                <p>45678</p>
+                                <p>jan-march 2019</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
 
+            </article>
+        </main>
 
-
-        <section id="body-div">
-            <div class="container-fluid card-section">
-                <div class="row mt-3 mx-5">
-                    <div class="col card1" style="margin-left: 50px;">
-                        <div class="card-body">
-                            <h6>Product Solid</h6>
-                            <p>45678</p>
-                            <p>jan-march 2019</p>
-                        </div>
-                    </div>
-                    <div class="col card2 ms-3">
-                        <div class="card-body">
-                            <h6>Product Solid</h6>
-                            <p>45678</p>
-                            <p>jan-march 2019</p>
-                        </div>
-                    </div>
-                    <div class="col card3 ms-3">
-                        <div class="card-body">
-                            <h6>Product Solid</h6>
-                            <p>45678</p>
-                            <p>jan-march 2019</p>
-                        </div>
-                    </div>
-                    <div class="col card4 ms-3">
-                        <div class="card-body">
-                            <h6>Product Solid</h6>
-                            <p>45678</p>
-                            <p>jan-march 2019</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
+        <!-- <footer>footer</footer> -->
     </div>
-
 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-
-
-        function toggleNav() {
-            var sidepanel = document.getElementById("mySidepanel");
-            var bodyDiv = document.getElementById("body-div");
-            var width = sidepanel.style.width;
-            if (width === "200px") {
-                sidepanel.style.width = "0";
-                bodyDiv.style.marginLeft = "0";
-            } else {
-                sidepanel.style.width = "200px";
-                bodyDiv.style.marginLeft = "300px";
-            }
-        }
-
-
-        function openNav(contentId) {
-            var contentSections = document.querySelectorAll(".content-section");
-            contentSections.forEach(function (section) {
-                section.style.display = "none";
-            });
-            document.getElementById(contentId).style.display = "block";
-            var sidepanel = document.getElementById("mySidepanel");
-            var bodyDiv = document.getElementById("body-div");
-            sidepanel.style.width = "200px";
-            bodyDiv.style.marginLeft = "300px";
-        }
-
-        // function openNav() {
-        //     document.getElementById("mySidepanel").style.width = "200px";
-        //     document.getElementById("body-div").style.marginLeft = "300px"; // Move body content to the right
-        // }
-
-        // function closeNav() {
-        //     document.getElementById("mySidepanel").style.width = "0";
-        //     document.getElementById("body-div").style.marginLeft = "0"; // Move body content back to the left
-        // }
-    </script>
-
-
-
+    <script src="micro.js"></script>
 </body>
 
 </html>
